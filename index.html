@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test de Personalidad</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="container">
+        <h1>Test de Personalidad</h1>
+        <div id="intro">
+            <p>Este test se basa en el modelo de los Cinco Grandes (Big Five) de la personalidad, que incluye Apertura, Responsabilidad, Extraversión, Amabilidad y Neuroticismo. Responde honestamente para obtener un perfil preciso.</p>
+            <button id="start-btn">Comenzar Test</button>
+        </div>
+        <div id="test" style="display: none;">
+            <div id="progress">Sección 1 de 5</div>
+            <div id="questions"></div>
+            <button id="next-btn" style="display: none;">Siguiente</button>
+        </div>
+        <div id="results" style="display: none;">
+            <h2>Tu Perfil de Personalidad</h2>
+            <div id="profile"></div>
+            <button id="restart-btn">Reiniciar Test</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
