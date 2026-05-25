@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foro - El Tablón del Inframundo</title>
+    <link rel="stylesheet" href="foro.css">
+    <link rel="stylesheet" href="css.css">
+</head>
+<body class="forum-body">
+
+<header class="forum-header">
+    <div class="forum-header-container">
+        <div class="forum-logo">The Human Ingredient</div>
+        <nav class="forum-nav">
+            <ul>
+                <li><a href="inicio.html">Inicio</a></li>
+                <li><a href="inicio.html#restaurante">El Restaurante</a></li>
+                <li><a href="inicio.html#personajes">Clientes</a></li>
+                <li><a href="foro.html" class="active">Foro</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="forum-main-content">
+    <div class="forum-container">
+        <h1 class="forum-title">El Tablón del Inframundo</h1>
+        <p class="forum-subtitle">Comunidad oculta de chefs y carniceros. Deja tus trucos de cocina y gestión de cordura.</p>
+
+        <div class="forum-card create-post-card">
+            <h3>Publicar un nuevo hilo</h3>
+            <form id="forum-form">
+                <div class="form-group">
+                    <input type="text" id="post-title" placeholder="Título del hilo (ej. ¿Cómo limpiáis rápido la sangre?)" required>
+                </div>
+                <div class="forum-row">
+                    <select id="post-category" required>
+                        <option value="" disabled selected>Selecciona Categoría</option>
+                        <option value="Cocina">Cocina e Ingredientes</option>
+                        <option value="Matadero">El Matadero Humano</option>
+                        <option value="Cordura">Control de Cordura</option>
+                        <option value="Propinas">Gestión y Mejoras</option>
+                        <option value="Dev">Notas del desarrollador</option>
+                    </select>
+                    <input type="text" id="post-author" placeholder="Tu alias de Chef" required>
+                </div>
+                <div class="form-group">
+                    <textarea id="post-content" rows="4" placeholder="Escribe aquí tu mensaje del abismo..." required></textarea>
+                </div>
+                <button type="submit" class="btn-enviar-al-tablon">Enviar al Tablón ➥</button>
+            </form>
+        </div>
+
+        <div class="forum-threads-header">
+            <h3>🗫 Discusiones Recientes</h3>
+            <button id="clear-forum-btn" class="btn-clear-forum">Purgar Tablón</button>
+        </div>
+
+        <div id="forum-threads-container"></div>
+    </div>
+</main>
+
+<footer class="forum-footer">
+    <div class="forum-footer-container">
+        <div class="forum-footer-buttons">
+            <a href="#" class="forum-footer-btn">Compartir la Deuda</a>
+            <a href="#" class="forum-footer-btn">Atención al cliente</a>
+        </div>
+
+        <div class="forum-official-logos">
+            <div class="forum-logo-badge">HELL ENGINE</div>
+            <div class="forum-logo-badge">STEAM / PC</div>
+
+            <div class="forum-pegi-18">
+                <div class="pegi-number">18</div>
+                <div class="pegi-text">VIOLENCIA<br>LENGUAJE SOEZ</div>
+            </div>
+
+            <div class="forum-logo-badge">SANITY PASSED</div>
+        </div>
+
+        <div class="footer-social-links reveal">
+            <a href="AQUÍ_VA_EL_LINK_DE_TU_INSTAGRAM" class="social-icon ins" title="Instagram">
+                <img src="imagenes/ig.png" height="1280" width="1280"/>
+            </a>
+
+            <a href="AQUÍ_VA_EL_LINK_DE_TU_TIKTOK" class="social-icon tik" title="TikTok">
+                <img src="imagenes/tiktok.png" height="3000" width="3000"/>
+            </a>
+
+            <a href="AQUÍ_VA_EL_LINK_DE_TU_STEAM" class="social-icon stm" title="Steam">
+                <img src="imagenes/steam.png" height="1280" width="1280"/>
+            </a>
+
+            <a href="AQUÍ_VA_EL_LINK_DE_TU_DISCORD" class="social-icon dsc" title="Discord">
+                <img src="imagenes/discord.png" height="2194" width="3000"/>
+            </a>
+        </div>
+
+        <p class="forum-copyright">© 2026 The Human Ingredient. Todos los derechos reservados de carnicería.</p>
+    </div>
+</footer>
+
+<script src="./foro.js"></script>
+</body>
+</html>

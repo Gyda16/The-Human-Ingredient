@@ -1,0 +1,444 @@
+/* ==========================================================================
+   FORO.CSS - ARQUITECTURA COMPLETAMENTE INDEPENDIENTE Y VISIBLE
+   ========================================================================== */
+
+:root {
+    --bg-verde-infernal: #0f4d19; /* El verde Zelda de tu footer */
+    --oro-interfaz: #bfa34b;
+    --oro-brillante: #e6c667;
+    --pergamino: #f4efe1;
+    --texto-oscuro: #111111;
+}
+
+body.forum-body {
+    background-color: var(--pergamino) !important;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--texto-oscuro);
+}
+
+/* --- CABECERA REPARADA --- */
+.forum-header {
+    background-color: #000000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.forum-header-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.forum-logo {
+    color: var(--oro-interfaz);
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.forum-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+.forum-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+}
+
+.forum-nav a:hover, .forum-nav a.active {
+    color: var(--oro-interfaz);
+}
+
+/* --- CONTENEDOR PRINCIPAL --- */
+.forum-main-content {
+    padding-top: 120px;
+    padding-bottom: 60px;
+}
+
+.forum-container {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.forum-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.forum-subtitle {
+    text-align: center;
+    color: var(--bg-verde-infernal);
+    font-style: italic;
+    margin-bottom: 35px;
+}
+
+/* --- TARJETAS Y FORMULARIO --- */
+.forum-card {
+    background: #ffffff;
+    border: 2px solid var(--oro-interfaz);
+    border-radius: 6px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.create-post-card {
+    background-color: #fbfbfa;
+    border-style: dashed;
+}
+
+.create-post-card h3 {
+    margin-top: 0;
+    color: var(--bg-verde-infernal);
+    margin-bottom: 15px;
+}
+
+.form-group { margin-bottom: 15px; }
+.form-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+#forum-form input, #forum-form select, #forum-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    box-sizing: border-box;
+    background: #ffffff;
+    color: #000000;
+}
+
+/* --- ¡BOTÓN DE ENVIAR CORREGIDO Y VISIBLE! --- */
+.btn-enviar-al-tablon {
+    background-color: var(--bg-verde-infernal) !important;
+    color: #ffffff !important;
+    border: 2px solid var(--oro-interfaz) !important;
+    padding: 12px 28px !important;
+    font-size: 1rem !important;
+    font-weight: bold !important;
+    text-transform: uppercase;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.btn-enviar-al-tablon:hover {
+    background-color: #166e25 !important;
+    transform: translateY(-2px);
+}
+
+/* --- LISTADO DE HILOS --- */
+.forum-threads-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+    border-bottom: 2px solid var(--oro-interfaz);
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+}
+
+.btn-clear-forum {
+    background: transparent;
+    border: none;
+    color: #b22222;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.post-card {
+    background: #ffffff;
+}
+
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.post-category-tag {
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+
+.tag-Cocina { background-color: var(--bg-verde-infernal); }
+.tag-Matadero { background-color: #b22222; }
+.tag-Cordura { background-color: #4b0082; }
+.tag-Propinas { background-color: var(--oro-interfaz); }
+
+.post-meta { font-size: 0.85rem; color: #555555; }
+.post-card h4 { font-size: 1.35rem; margin: 6px 0; color: #000000; }
+.post-card p { margin: 0; color: #333333; line-height: 1.5; }
+
+/* --- FOOTER DEL FORO INTERACTIVO --- */
+.forum-footer {
+    background-color: var(--bg-verde-infernal);
+    padding: 40px 20px;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 80px;
+}
+
+.forum-footer-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.forum-footer-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.forum-footer-btn {
+    border: 2px solid #ffffff;
+    padding: 10px 24px;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.forum-official-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.forum-logo-badge {
+    border: 2px solid rgba(255,255,255,0.4);
+    padding: 8px 16px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+/* PEGI 18 Oficial */
+.forum-pegi-18 {
+    display: flex;
+    background: #000000;
+    border: 2px solid #ffffff;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.forum-pegi-18 .pegi-number {
+    background: #e20613;
+    color: #ffffff;
+    font-weight: 900;
+    font-size: 1.8rem;
+    padding: 2px 10px;
+}
+
+.forum-pegi-18 .pegi-text {
+    font-size: 0.55rem;
+    padding: 4px 8px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+
+/* Redes Sociales Ajustadas */
+.forum-social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.forum-social-icon {
+    width: 45px;
+    height: 45px;
+    border: 2px solid rgba(255,255,255,0.4);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.2);
+}
+
+.forum-social-icon img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
+
+/* Escalado para TikTok */
+.forum-social-icon.forum-tik img {
+    transform: scale(1.3);
+}
+
+.forum-copyright {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.6);
+    margin: 0;
+}
+
+.create-post-card h3 {
+    color: var(--zelda-green-theme);
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+}
+
+/* Formulario e Inputs estilizados */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+#forum-form input,
+#forum-form select,
+#forum-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--zelda-gold-light);
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1rem;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    color: var(--text-main);
+}
+
+#forum-form input:focus,
+#forum-form select:focus,
+#forum-form textarea:focus {
+    outline: none;
+    border-color: var(--zelda-green-theme);
+    box-shadow: 0 0 8px rgba(15, 77, 25, 0.15);
+}
+
+/* Botón de Enviar con el Dorado Oficial */
+.btn-submit-forum {
+    background-color: var(--zelda-gold);
+    color: #ffffff;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-submit-forum:hover {
+    background-color: var(--zelda-green-theme);
+    transform: translateY(-2px);
+}
+
+/* Secciones de Hilos */
+.forum-threads-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 25px;
+    border-bottom: 2px solid var(--zelda-gold-light);
+    padding-bottom: 10px;
+}
+
+.forum-threads-header h3 {
+    margin: 0;
+    color: var(--text-main);
+    font-size: 1.5rem;
+}
+
+.btn-clear-forum {
+    background: transparent;
+    border: none;
+    color: #cc0000;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+.btn-clear-forum:hover {
+    text-decoration: underline;
+}
+
+/* Diseño de los Mensajes Publicados */
+.post-card {
+    animation: dropPost 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.15) forwards;
+}
+
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.post-category-tag {
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 4px 12px;
+    border-radius: 20px;
+    text-transform: uppercase;
+}
+
+.tag-Cocina { background-color: var(--zelda-green-theme); }
+.tag-Matadero { background-color: #b22222; }
+.tag-Cordura { background-color: #4b0082; }
+.tag-Propinas { background-color: var(--zelda-gold); }
+
+.post-meta {
+    font-size: 0.85rem;
+    color: #666666;
+}
+
+.post-card h4 {
+    color: var(--text-main);
+    font-size: 1.4rem;
+    margin: 8px 0;
+}
+
+.post-card p {
+    color: #333333;
+    line-height: 1.6;
+    margin: 0;
+}
+
+@keyframes dropPost {
+    from { opacity: 0; transform: translateY(-15px); }
+    to { opacity: 1; transform: translateY(0); }
+}

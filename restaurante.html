@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Restaurante - Lugares de Interés</title>
+    <link rel="stylesheet" href="restaurante.css">
+</head>
+<body class="rest-body">
+
+<header class="rest-header">
+    <div class="rest-header-container">
+        <div class="rest-logo">The human Ingredient</div>
+        <nav class="rest-nav">
+            <ul>
+                <li><a href="inicio.html">Inicio</a></li>
+                <li><a href="restaurante.html" class="active">El Restaurante</a></li>
+                <li><a href="index.html#personajes">Clientes</a></li>
+                <li><a href="foro.html">Foro</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="rest-intro-section">
+    <div class="rest-intro-bg"></div>
+    <div class="rest-intro-content">
+        <span class="rest-tag">GUÍA DEL ABISMO</span>
+        <h1 class="rest-title">El Restaurante del Inframundo</h1>
+        <p class="rest-subtitle">Un recorrido por las instalaciones donde el pánico se cocina a fuego lento. Explora cada rincón de nuestro establecimiento antes de abrir las puertas a los demonios.</p>
+    </div>
+</section>
+
+<section class="places-section">
+    <div class="places-container">
+
+        <div class="places-sidebar">
+            <h2 class="places-sidebar-title">Lugares de interés</h2>
+            <ul class="places-tabs-list">
+                <li class="place-tab active" data-place="cocina">La Cocina Infernal</li>
+                <li class="place-tab" data-place="almacen">Almacén de "Ingredientes"</li>
+                <li class="place-tab" data-place="comedor">El Comedor del Abismo</li>
+                <li class="place-tab" data-place="matadero">Zona de Sacrificio</li>
+            </ul>
+        </div>
+
+        <div class="places-content-display">
+
+            <div class="place-image-wrapper">
+                <img id="place-display-img" src="./lugar-cocina.png" alt="Vista del lugar" class="place-main-image">
+                <div class="place-image-shadow"></div>
+            </div>
+
+            <div class="place-info-card">
+                <h3 id="place-display-title" class="place-info-title">La Cocina Infernal</h3>
+                <p id="place-display-desc" class="place-info-desc">Aquí es donde ocurre la magia gótica. Equipada con fogones malditos de alta velocidad, los chefs deben coordinar sus movimientos para emplatar las comandas de los demonios mayores antes de que agoten su paciencia.</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<script src="restaurante.js"></script>
+</body>
+</html>
