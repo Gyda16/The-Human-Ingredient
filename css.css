@@ -2,12 +2,12 @@
    PALETA OFICIAL Y REGLAS DE ARQUITECTURA VISUAL
    ========================================================================== */
 :root {
-    --zelda-blue-bg: #2979cd;
-    --zelda-green-theme: #0f4d19;
-    --zelda-gold: #b28a2a;
-    --zelda-gold-light: #ebd699;
-    --parchment-bg: #fdfbf3;
-    --text-main: #1c3524;
+    --zelda-blue-bg: #737373;
+    --zelda-green-theme: #531003;
+    --zelda-gold: #8c1c1c;
+    --zelda-gold-light: #cf3d3d;
+    --parchment-bg: #b2b1b1;
+    --text-main: #1d1d1d;
     --transition-bounce: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     --transition-reveal: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
 }
@@ -40,7 +40,7 @@ header {
 }
 
 .nav-capsule {
-    background-color: rgba(16, 61, 24, 0.9); /* Verde Nintendo semitransparente */
+    background-color: rgb(29 29 29); /* Verde Nintendo semitransparente */
     padding: 8px 30px;
     border-radius: 50px;
     border: 2px solid var(--zelda-gold);
@@ -126,7 +126,7 @@ nav a:hover, nav a.active {
 }
 
 .placeholder-text {
-    color: rgba(255, 255, 255, 0.4);
+    color: rgb(29 29 29);
     font-weight: bold;
     font-size: 1.5rem;
     text-align: center;
@@ -176,7 +176,7 @@ nav a:hover, nav a.active {
 .parchment-border p {
     font-size: 1rem;
     line-height: 1.6;
-    color: #445548;
+    color: #554444;
     margin-bottom: 25px;
 }
 
@@ -216,15 +216,9 @@ nav a:hover, nav a.active {
     position: relative;
 }
 
-/* Generador de patrón de triángulos tipo Trifuerza de fondo */
+/* Fondo limpio y sólido */
 .bg-triangles {
-    background-color: #ffffff;
-    background-image: linear-gradient(45deg, #f7f7f7 25%, transparent 25%),
-    linear-gradient(-45deg, #f7f7f7 25%, transparent 25%),
-    linear-gradient(45deg, transparent 75%, #f7f7f7 75%),
-    linear-gradient(-45deg, transparent 75%, #f7f7f7 75%);
-    background-size: 40px 40px;
-    background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
+    background-color: #1d1d1d; /* Puedes cambiar este #ffffff por el color sólido que quieras */
 }
 
 .section-wrapper {
@@ -279,13 +273,13 @@ nav a:hover, nav a.active {
 .placeholder-inner {
     width: 100%;
     height: 400px;
-    border: 3px dashed #b28a2a;
+    border: 3px dashed #cf3d3d;
     background-color: #fff;
     box-shadow: 0 15px 35px rgba(0,0,0,0.1);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #b28a2a;
+    color: #cf3d3d;
     font-weight: bold;
 }
 .circle-or-box { border-radius: 16px; }
@@ -435,7 +429,7 @@ nav a:hover, nav a.active {
     text-transform: uppercase;
     letter-spacing: 3px;
     font-style: italic;
-    text-shadow: 0 0 15px rgba(178, 138, 42, 0.4);
+    text-shadow: 0 0 15px rgb(207 61 61);
 }
 
 .divider-icon {
@@ -745,7 +739,7 @@ button:hover .game-icon-static {
 
 /* Efecto Hover con la paleta de colores corporativa de Steam */
 .btn-steam:hover {
-    background: linear-gradient(135deg, #107c10 0%, #0078d4 100%) !important; /* Visual azul/verde de carga */
+    background: linear-gradient(135deg, #1d1d1d 0%, #531003 100%) !important; /* Visual azul/verde de carga */
     background-color: #171a21 !important; /* Fondo oscuro de Steam */
     color: #66c0f4 !important; /* Azul eléctrico de las letras de Steam */
     border-color: #66c0f4 !important;
@@ -769,8 +763,8 @@ button:hover .game-icon-static {
    ========================================================================== */
 .explore-zelda-section {
     position: relative;
-    background-color: #0b3a13; /* Verde profundo gótico de fondo */
-    background-image: linear-gradient(135deg, #0b3a13 0%, #05220a 100%);
+    background-color: #8c1c1c; /* Verde profundo gótico de fondo */
+    background-image: linear-gradient(135deg, #1d1d1d 0%, #554444 100%);
     padding: 80px 20px;
     overflow: hidden;
     color: #ffffff;
@@ -816,7 +810,7 @@ button:hover .game-icon-static {
 }
 
 .explore-tag {
-    color: #e6c667; /* Oro brillante */
+    color: #b2b1b1; /* Oro brillante */
     font-size: 0.85rem;
     font-weight: bold;
     letter-spacing: 2px;
@@ -848,7 +842,7 @@ button:hover .game-icon-static {
 }
 
 .btn-explore-gold {
-    background-color: #bfa34b;
+    background-color: #b2b1b1;
     color: #000000;
     text-decoration: none;
     font-weight: bold;
@@ -861,7 +855,7 @@ button:hover .game-icon-static {
 }
 
 .btn-explore-gold:hover {
-    background-color: #e6c667;
+    background-color: #b2b1b1;
     transform: scale(1.05) translateY(-2px);
 }
 
@@ -880,7 +874,7 @@ button:hover .game-icon-static {
 
 .btn-explore-outline:hover {
     background: #ffffff;
-    color: #0b3a13;
+    color: #1d1d1d;
     transform: translateY(-2px);
 }
 
@@ -898,9 +892,9 @@ button:hover .game-icon-static {
     width: 240px;
     height: 240px;
     border-radius: 50%;
-    border: 6px solid #bfa34b; /* Marco dorado */
+    border: 6px solid #531003; /* Marco dorado */
     box-shadow: 0 8px 30px rgba(0,0,0,0.5), inset 0 0 20px rgba(0,0,0,0.4);
-    background-color: #05220a;
+    background-color: #cf3d3d;
     overflow: hidden; /* Esto hace que la imagen sea perfectamente redonda */
     animation: softFloat 5s ease-in-out infinite alternate;
 }
@@ -946,7 +940,7 @@ button:hover .game-icon-static {
 
 .explore-badge-item {
     background: rgba(0, 0, 0, 0.25);
-    border-left: 4px solid #bfa34b;
+    border-left: 4px solid #531003;
     padding: 15px 20px;
     border-radius: 0 8px 8px 0;
     display: flex;
@@ -980,4 +974,294 @@ button:hover .game-icon-static {
 @keyframes softFloat {
     0% { transform: translateY(0px); }
     100% { transform: translateY(-10px); }
+}
+
+/* ==========================================================================
+   HEADER ESTILO CÁPSULA COMPACTA (COMO EN LA IMAGEN 2)
+   ========================================================================== */
+
+/* 1. El contenedor principal se vuelve transparente y ocupa el ancho para posicionar */
+#main-header,
+#main-header.scrolled {
+    position: fixed !important;
+    top: 20px !important;
+    left: 0 !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: none !important;
+    background: transparent !important; /* Quitamos el fondo verde de aquí */
+    border: none !important; /* Quitamos el borde dorado de aquí */
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    height: auto !important;
+    padding: 0 40px !important; /* Margen para que el logo no se pegue al borde de la pantalla */
+    box-sizing: border-box !important;
+    transition: none !important;
+    pointer-events: none !important; /* Evita que el contenedor invisible bloquee la web */
+}
+
+/* 2. Contenedor interno donde conviven el logo y la cápsula */
+#main-header .header-container,
+#main-header.scrolled .header-container {
+    display: flex !important;
+    justify-content: flex-start !important; /* Mantiene el logo a la izquierda */
+    gap: 30px !important; /* Separación entre el logo y la cápsula verde */
+    align-items: center !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: transparent !important;
+    padding: 0 !important;
+    pointer-events: auto !important; /* Reactiva los clics en los botones y el logo */
+}
+
+/* 🎯 3. ¡LA CÁPSULA! Se la aplicamos SÓLO al menú para que sea compacta */
+#main-header nav,
+#main-header.scrolled nav {
+    background-color: #1d1d1d !important; /* Fondo verde oscuro */
+    border: 2px solid #8c1c1c !important; /* Borde dorado */
+    border-radius: 40px !important; /* Esquinas redondas */
+    padding: 10px 30px !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4) !important;
+    width: max-content !important; /* Hace que se encoja para abrazar solo los botones */
+    margin: 0 !important;
+}
+
+/* 4. Alineación de los enlaces dentro de la cápsula */
+#main-header nav ul,
+#main-header.scrolled nav ul {
+    display: flex !important;
+    gap: 25px !important; /* Espacio entre "Inicio", "El Restaurante", etc. */
+    align-items: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+    background: transparent !important;
+}
+/* Fuerza a los enlaces de salto a comportarse como botones reales */
+.btn-zelda-white,
+.btn-zelda,
+.btn-explore-gold,
+.btn-explore-outline {
+    display: inline-block !important;
+    text-align: center !important;
+    text-decoration: none !important; /* Elimina el subrayado de texto */
+    cursor: pointer !important;
+}
+/* ==========================================================================
+   REPARACIÓN DE CABECERA ESTILO CÁPSULA (IMAGEN 2 ORIGINAL)
+   ========================================================================== */
+
+/* Contenedor padre invisible */
+#main-header,
+#main-header.scrolled {
+    position: fixed !important;
+    top: 20px !important;
+    left: 0 !important;
+    width: 100% !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    height: auto !important;
+    padding: 0 40px !important;
+    box-sizing: border-box !important;
+    z-index: 9999 !important;
+    pointer-events: none !important;
+}
+
+/* Alineación interna del logo y el menú */
+#main-header .header-container,
+#main-header.scrolled .header-container {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+    background: transparent !important;
+    padding: 0 !important;
+    pointer-events: auto !important;
+}
+
+/* 🎯 LA CÁPSULA VERDE: Ajustada al contenido exacto sin deformarse */
+#main-header nav,
+#main-header.scrolled nav {
+    background-color: #1d1d1d !important;
+    border: 2px solid #8c1c1c !important;
+    border-radius: 40px !important;
+    padding: 6px 8px 6px 25px !important; /* Menos espacio a la derecha porque el botón oro ya abulta */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4) !important;
+    width: max-content !important;
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+#main-header nav ul,
+#main-header.scrolled nav ul {
+    display: flex !important;
+    gap: 25px !important;
+    align-items: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+    background: transparent !important;
+}
+
+/* ESTILO DE LOS ENLACES DE TEXTO DEL MENÚ */
+.nav-link {
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-weight: bold !important;
+    font-size: 0.85rem !important;
+    letter-spacing: 1px !important;
+    transition: color 0.2s ease !important;
+}
+.nav-link:hover {
+    color: #cf3d3d !important;
+}
+
+/* ESTILO DEL BOTÓN DORADO "COMPRAR" DEL MENÚ */
+.nav-btn-gold {
+    background-color: #8c1c1c !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-weight: bold !important;
+    font-size: 0.85rem !important;
+    letter-spacing: 1px !important;
+    padding: 8px 20px !important;
+    border-radius: 30px !important;
+    border: 2px solid #260902 !important;
+    display: inline-block !important;
+    transition: background-color 0.2s !important;
+}
+.nav-btn-gold:hover {
+    background-color: #cf3d3d !important;
+}
+
+/* ==========================================================================
+   BOTONES DE LAS SECCIONES DEL CUERPO (ABAJO EN LA WEB)
+   ========================================================================== */
+.btn-zelda-white, .btn-explore-gold, .btn-explore-outline {
+    display: inline-block !important;
+    text-align: center !important;
+    text-decoration: none !important;
+    cursor: pointer !important;
+}
+/* ==========================================================================
+   SOLUCIÓN DEFINITIVA DE VISIBILIDAD (SIN BLOQUE BLANCO)
+   ========================================================================== */
+
+/* Forzamos a que el fondo del body sea oscuro si el diseño lo requiere */
+body {
+    background-color: #1a1a1a !important; /* Ajusta este color al gris oscuro de tu web si cambia */
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Hacemos visibles las secciones de animaciones sin alterar su diseño */
+.reveal-left,
+.reveal-right,
+.reveal {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    transition: none !important;
+}
+
+/* Aseguramos que las secciones intermedias se muestren bien */
+.content-section,
+.hero-section,
+.explore-zelda-section {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Eliminamos el margen que empujaba la web hacia abajo */
+main {
+    margin-top: 0 !important;
+}
+/* ==========================================================================
+   ESTILOS CORREGIDOS PARA EL BANNER DE COOKIES (FORZADO FLOTANTE)
+   ========================================================================== */
+#cookie-banner {
+    position: fixed !important;
+    bottom: 20px !important;
+    left: 50% !important;
+    transform: translateX(-50%) translateY(150px);
+    width: 90% !important;
+    max-width: 800px !important;
+    background-color: #1d1d1d !important; /* Fondo oscuro del nav */
+    border: 2px solid #8c1c1c !important;   /* Tu borde granate oficial */
+    border-radius: 15px !important;
+    padding: 25px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8) !important;
+    z-index: 99999 !important;
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease !important;
+    box-sizing: border-box !important;
+}
+
+/* Clase que activa el JavaScript para que suba y se vea */
+#cookie-banner.cookie-banner-visible {
+    transform: translateX(-50%) translateY(0) !important;
+    opacity: 1 !important;
+}
+
+.cookie-content {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 15px !important;
+    text-align: left !important;
+}
+
+.cookie-content h3 {
+    color: #ffffff !important;
+    margin: 0 !important;
+    font-size: 1.2rem !important;
+    font-weight: bold !important;
+}
+
+.cookie-content p {
+    color: #cccccc !important;
+    margin: 0 !important;
+    font-size: 0.85rem !important;
+    line-height: 1.5 !important;
+}
+
+.cookie-buttons {
+    display: flex !important;
+    justify-content: flex-end !important;
+    gap: 15px !important;
+    margin-top: 5px !important;
+}
+
+#btn-accept-cookies {
+    background-color: #8c1c1c !important;
+    color: #ffffff !important;
+    border: none !important;
+    padding: 10px 22px !important;
+    border-radius: 20px !important;
+    font-weight: bold !important;
+    font-size: 0.85rem !important;
+    cursor: pointer !important;
+    transition: background-color 0.2s ease !important;
+}
+
+#btn-accept-cookies:hover {
+    background-color: #cf3d3d !important;
+}
+
+#btn-reject-cookies {
+    background-color: transparent !important;
+    color: #ffffff !important;
+    border: 2px solid #ffffff !important;
+    padding: 8px 22px !important;
+    border-radius: 20px !important;
+    font-weight: bold !important;
+    font-size: 0.85rem !important;
+    cursor: pointer !important;
+    transition: background-color 0.2s, color 0.2s !important;
+}
+
+#btn-reject-cookies:hover {
+    background-color: #ffffff !important;
+    color: #1d1d1d !important;
 }

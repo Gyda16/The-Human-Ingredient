@@ -1,0 +1,590 @@
+/* ==========================================================================
+   VARIABLES GLOBALES Y CONFIGURACIÓN
+   ========================================================================== */
+:root {
+    --zelda-gold: #cf3d3d;
+    --zelda-gold-light: #8c1c1c;
+    --transition-bounce: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    --transition-reveal: all 0.6s ease;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #737373; /* Tu color sólido gris sin rayas */
+    color: #8c1c1c;            /* Tu color de texto inicial */
+    overflow-x: hidden;
+}
+
+/* ==========================================================================
+   CABECERA ESTILO CÁPSULA COMPACTA (FIJA EN PANTALLA)
+   ========================================================================== */
+#main-header {
+    position: fixed !important;
+    top: 20px !important;
+    left: 0 !important;
+    width: 100% !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 40px !important;
+    box-sizing: border-box !important;
+    z-index: 9999 !important;
+    pointer-events: none !important;
+}
+
+#main-header .header-container {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+    background: transparent !important;
+    padding: 0 !important;
+    pointer-events: auto !important;
+}
+
+.logo-text {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+#main-header nav {
+    background-color: #1d1d1d !important;
+    border: 2px solid #8c1c1c !important;
+    border-radius: 40px !important;
+    padding: 6px 8px 6px 25px !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4) !important;
+    width: max-content !important;
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center;
+}
+
+#main-header nav ul {
+    display: flex !important;
+    gap: 25px !important;
+    align-items: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+}
+
+.nav-link {
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-weight: bold !important;
+    font-size: 0.85rem !important;
+    letter-spacing: 1px !important;
+    transition: color 0.2s ease !important;
+}
+
+.nav-link:hover,
+.nav-link.active-page {
+    color: #cf3d3d !important;
+}
+
+.nav-btn-gold {
+    background-color: #8c1c1c !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-weight: bold !important;
+    font-size: 0.85rem !important;
+    letter-spacing: 1px !important;
+    padding: 8px 20px !important;
+    border-radius: 30px !important;
+    border: 2px solid #260902 !important;
+    display: inline-block !important;
+    transition: background-color 0.2s !important;
+}
+
+.nav-btn-gold:hover {
+    background-color: #cf3d3d !important;
+}
+
+/* ==========================================================================
+   CONTENEDOR DE TARJETAS DE PERSONAJES
+   ========================================================================== */
+.main-content {
+    max-width: 900px;
+    margin: 150px auto 80px auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.page-title {
+    font-size: 2.2rem;
+    color: #ffffff;
+    margin-top: 0;
+    margin-bottom: 45px;
+    text-align: left;
+}
+
+.characters-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 55px;
+    width: 100%;
+}
+
+.zelda-card {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 350px;
+}
+
+.char-image-frame {
+    width: 65%;
+    height: 100%;
+    border: 2px solid #260902;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    padding: 7px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    position: relative;
+    z-index: 1;
+}
+
+.image-placeholder-bg {
+    width: 100%;
+    height: 100%;
+    background-color: #eef2f7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #475569;
+    font-weight: bold;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+.char-green-badge {
+    position: absolute;
+    right: 0;
+    width: 42%;
+    height: 75%;
+    background-color: #531003;
+    border: 2px solid var(--zelda-gold);
+    z-index: 2;
+    box-sizing: border-box;
+    padding: 25px;
+    box-shadow: -5px 6px 15px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.corner-deco {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border: 2px solid var(--zelda-gold);
+}
+.top-left { top: 6px; left: 6px; border-right: none; border-bottom: none; }
+.top-right { top: 6px; right: 6px; border-left: none; border-bottom: none; }
+.bottom-left { bottom: 6px; left: 6px; border-right: none; border-top: none; }
+.bottom-right { bottom: 6px; right: 6px; border-left: none; border-top: none; }
+
+.char-name-stripe {
+    background: repeating-linear-gradient(
+            45deg,
+            #1c1a1a,
+            #1c1a1a 4px,
+            #262424 4px,
+            #262424 8px
+    );
+    border: 1px solid #000000;
+    outline: 1px solid var(--zelda-gold);
+    position: absolute;
+    left: -15px;
+    top: 25px;
+    padding: 6px 22px;
+    box-shadow: 2px 4px 6px rgba(0,0,0,0.3);
+}
+
+.char-name-stripe h2 {
+    color: #ffffff;
+    margin: 0;
+    font-size: 1.1rem;
+    font-family: 'Georgia', serif;
+    letter-spacing: 1px;
+}
+
+.char-description {
+    color: #ffffff;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    margin: 35px 0 0 0;
+    opacity: 0.95;
+}
+
+/* ==========================================================================
+   ANIMACIONES DE ENTRADA EN ESCALERA
+   ========================================================================== */
+.animation-fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: inframundoFadeUp 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.characters-stack .zelda-card:nth-child(1) { animation-delay: 0.15s; }
+.characters-stack .zelda-card:nth-child(2) { animation-delay: 0.35s; }
+.characters-stack .zelda-card:nth-child(3) { animation-delay: 0.55s; }
+
+@keyframes inframundoFadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================================================
+   SECCIÓN NEGRA (EXPLORA LA ISLA)
+   ========================================================================== */
+.black-divider-section {
+    background-color: #000000;
+    padding: 80px 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.zigzag-border {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 15px;
+    background-image: linear-gradient(45deg, var(--zelda-gold) 25%, transparent 25%),
+    linear-gradient(-45deg, var(--zelda-gold) 25%, transparent 25%);
+    background-size: 20px 20px;
+    background-repeat: repeat-x;
+}
+
+.zigzag-border.top { top: 0; transform: rotate(180deg); }
+.zigzag-border.bottom { bottom: 0; }
+
+.divider-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.divider-content h2 {
+    color: var(--zelda-gold-light);
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-style: italic;
+    text-shadow: 0 0 15px rgb(38 9 2);
+}
+
+.divider-icon {
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--zelda-gold);
+    transform: rotate(45deg);
+}
+
+/* ==========================================================================
+   SECCIÓN EXPLORA SECTOR PRE-FOOTER
+   ========================================================================== */
+.explore-zelda-section {
+    position: relative;
+    background-color: #8c1c1c;
+    background-image: linear-gradient(135deg, #1d1d1d 0%, #554444 100%);
+    padding: 80px 20px;
+    overflow: hidden;
+    color: #ffffff;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.explore-bg-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1.5px, transparent 1.5px);
+    background-size: 24px 24px;
+    opacity: 0.7;
+    animation: smoothScrollBg 60s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes smoothScrollBg {
+    from { background-position: 0 0; }
+    to { background-position: 100% 100%; }
+}
+
+.explore-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.explore-left-col {
+    flex: 1;
+    min-width: 300px;
+}
+
+.explore-tag {
+    color: #b2b1b1;
+    font-size: 0.85rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.explore-heading {
+    font-size: 2.8rem;
+    margin: 0 0 15px 0;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.explore-text {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #e2ebd5;
+    margin-bottom: 30px;
+    max-width: 480px;
+}
+
+.explore-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-explore-gold {
+    background-color: #b2b1b1;
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 12px 28px;
+    border-radius: 30px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.2s;
+}
+
+.btn-explore-gold:hover {
+    background-color: #b2b1b1;
+    transform: scale(1.05) translateY(-2px);
+}
+
+.btn-explore-outline {
+    background: transparent;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 26px;
+    border-radius: 30px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+/* ==========================================================================
+   ESTILOS GENERALES DEL FOOTER REPARADO
+   ========================================================================== */
+.main-footer {
+    width: 100%;
+    background-color: #531003;
+    padding: 60px 20px;
+    border-top: 4px solid var(--zelda-gold);
+    box-sizing: border-box;
+}
+
+.footer-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    text-align: center;
+}
+
+.footer-action-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.btn-footer {
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: var(--transition-bounce);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-footer:hover {
+    background-color: #fff;
+    color: #8c1c1c;
+}
+
+.game-icon-static {
+    display: inline-block;
+    font-size: 1.15em;
+    vertical-align: middle;
+    line-height: 1;
+}
+
+.footer-official-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    width: 100%;
+}
+
+.logo-placeholder-small {
+    border: 2px solid #ffffff;
+    padding: 8px 18px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #ffffff;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.logo-rating-pegi {
+    display: flex;
+    align-items: stretch;
+    background: #000000;
+    border: 2px solid #ffffff;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    height: 46px;
+}
+
+.pegi-number {
+    background-color: #e20613;
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: 900;
+    font-family: 'Arial Black', Impact, sans-serif;
+    padding: 0 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.pegi-descriptors {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 12px;
+    background-color: #000000;
+}
+
+.pegi-descriptors span {
+    color: #ffffff;
+    font-size: 0.58rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-align: left;
+    display: block;
+    position: relative;
+    padding-left: 10px;
+}
+
+.pegi-descriptors span::before {
+    content: '•';
+    color: #e20613;
+    position: absolute;
+    left: 0;
+    font-size: 0.7rem;
+}
+
+.btn-steam {
+    cursor: pointer;
+    transition: var(--transition-bounce);
+}
+
+.btn-steam:hover {
+    background: linear-gradient(135deg, #1d1d1d 0%, #531003 100%) !important;
+    color: #66c0f4 !important;
+    border-color: #66c0f4 !important;
+    box-shadow: 0 0 15px rgba(102, 192, 244, 0.4);
+    transform: translateY(-3px) scale(1.05);
+}
+
+.footer-social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.social-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,0.2);
+    border: 2px solid #ffffff;
+    transition: var(--transition-bounce);
+}
+
+.social-icon img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    pointer-events: none;
+}
+
+.social-icon:hover {
+    background-color: var(--zelda-gold);
+    transform: translateY(-5px);
+}
+
+.footer-legal {
+    color: #ffffff;
+    font-size: 0.85rem;
+    opacity: 0.9;
+    width: 100%;
+}
+
+.legal-fine-print {
+    max-width: 800px;
+    margin: 20px auto 0 auto;
+    line-height: 1.5;
+    font-size: 0.75rem;
+    opacity: 0.7;
+}
