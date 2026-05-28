@@ -588,3 +588,75 @@ body {
     font-size: 0.75rem;
     opacity: 0.7;
 }
+/* ==========================================================================
+   CONTROL DE IMÁGENES EN LA SECCIÓN DE PERSONAJES
+   ========================================================================== */
+
+/* Buscamos el contenedor donde metiste la imagen y controlamos su tamaño */
+.personajes-section,
+.character-container,
+.block-text {
+    position: relative !important;
+}
+
+/* Forzamos a que CUALQUIER imagen dentro de la zona de personajes sea responsiva */
+.explore-round-image,
+img[src*="imagenes/"] {
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: 450px !important; /* Evita que crezca hasta el infinito */
+    object-fit: contain !important; /* Mantiene las proporciones del render 3D sin deformarlo */
+    display: block !important;
+    margin: 0 auto !important;
+}
+
+/* Si las tarjetas de texto (Arthur, Tarin) se te quedan descolocadas por culpa del render,
+   nos aseguramos de que tengan prioridad visual y se posicionen correctamente */
+.parchment-style,
+div[class*="card"] {
+    z-index: 10 !important; /* Pasa el texto por delante si coincide con el fondo */
+}
+
+/* ==========================================================================
+   CORRECCIÓN REFORZADA PARA IMÁGENES DE PERSONAJES
+   ========================================================================== */
+
+/* Forzamos a que la imagen ocupe TODO el espacio disponible de su tarjeta */
+.character-container img,
+.personajes-section img,
+.explore-round-image {
+    width: 100% !important;
+    height: 100% !important;
+    max-height: none !important; /* Quitamos el tope que te las encogía */
+    object-fit: cover !important;  /* Hace que la imagen llene el contenedor estirándose de forma inteligente */
+    display: block !important;
+}
+
+/* Nos aseguramos de que el contenedor de la tarjeta no tenga márgenes raros */
+.character-container,
+.personajes-section {
+    padding: 0 !important;
+    overflow: hidden !important; /* Si la imagen sobresale un pelo, la recorta limpiamente */
+}
+
+/* ==========================================================================
+   ALINEACIÓN DEL LOGO Y MENÚ SUPERIOR
+   ========================================================================== */
+#main-header {
+    display: flex !important;
+    justify-content: space-between !important; /* Empuja el logo a la izq y el menú a la der */
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 10px 40px !important; /* Ajusta el espacio a los lados para que no toque el borde de la pantalla */
+}
+
+/* Forzamos al logo a quedarse clavado a la izquierda */
+#main-header .logo,
+#main-header h1,
+#main-header div:first-child {
+    margin-right: auto !important;
+    margin-left: 0 !important;
+    text-align: left !important;
+}
